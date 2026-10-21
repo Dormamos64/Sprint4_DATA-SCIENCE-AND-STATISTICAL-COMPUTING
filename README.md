@@ -1,6 +1,5 @@
-===============================================================================
 
-PLATAFORMA DE INTELIGÊNCIA EM VENDAS & CUSTOMER SUCCESS - TOTVS
+*PLATAFORMA DE INTELIGÊNCIA EM VENDAS & CUSTOMER SUCCESS - TOTVS
 
 FIAP - Sprint 4 Challenge
 
@@ -230,6 +229,8 @@ Tecnologias Utilizadas
 
 - Gerenciamento de Ambientes: python-dotenv
 
+-------------------------------------------------------------------------------
+https://sprint4data-science-and-statistical-computing-o6eabr243shhl7u8.streamlit.app
 
 
 ===============================================================================
