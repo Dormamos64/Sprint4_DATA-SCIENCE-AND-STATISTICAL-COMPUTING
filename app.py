@@ -10,27 +10,37 @@ import pandas as pd
 from groq import Groq
 from dotenv import load_dotenv
 
-# ==============================================================================
-# CONFIGURAÇÃO DA PÁGINA STREAMLIT
-# ==============================================================================
+
 st.set_page_config(
-    page_title="Inteligência Comercial & CS - TOTVS (Groq)",
+    page_title="Inteligência Comercial & CS - TOTVS",
     page_icon="⚡",
     layout="wide"
 )
 
-# ==============================================================================
-# INICIALIZAÇÃO DA API GROQ
-# ==============================================================================
+
 load_dotenv()
-env_api_key = os.environ.get("GROQ_API_KEY")
-env_model_id = os.environ.get("GROQ_MODEL_ID") or "llama-3.3-70b-versatile"
+
+def obter_secret(chave, fallback=""):
+    
+    val = os.environ.get(chave)
+    if val:
+        return val
+    
+    try:
+        if hasattr(st, "secrets") and chave in st.secrets:
+            return st.secrets[chave]
+    except Exception:
+        pass
+    return fallback
+
+env_api_key = obter_secret("GROQ_API_KEY")
+env_model_id = obter_secret("GROQ_MODEL_ID", "openai/gpt-oss-20b")
 
 st.sidebar.title("⚙️ Configurações & Filtros")
 
 if env_api_key:
     api_key_final = env_api_key
-    st.sidebar.success("⚡ Groq API Key ativa via .env")
+    st.sidebar.success("⚡ Groq API Key ativa!")
 else:
     api_key_final = st.sidebar.text_input("Insira sua GROQ_API_KEY:", type="password")
 
@@ -48,14 +58,12 @@ def get_groq_client(api_key: str):
 
 client_ai = get_groq_client(api_key_final)
 
-# ==============================================================================
-# PROMPT DE EXTRAÇÃO
-# ==============================================================================
+
 PROMPT_EXTRACAO = """
 Você é um auditor sênior de inteligência comercial e Customer Success da TOTVS.
 Sua tarefa é analisar a transcrição da reunião e extrair métricas profundas sobre a conta e a atuação do vendedor.
 
-Retorne EXCLUSIVAMENTE um objeto JSON válido, sem qualquer markdown ou texto adicional fora do JSON, seguindo esta estrutura exata:
+Retorne EXCLUSIVAMENTE um objeto JSON válido, sem markdown ou texto adicional fora do JSON, seguindo esta estrutura exata:
 {
     "nome_cliente": "Nome da empresa cliente",
     "participantes": [{"nome": "Nome", "papel": "vendedor ou cliente"}],
@@ -77,9 +85,7 @@ Retorne EXCLUSIVAMENTE um objeto JSON válido, sem qualquer markdown ou texto ad
 }
 """
 
-# ==============================================================================
-# FUNÇÕES DE PROCESSAMENTO
-# ==============================================================================
+
 def calcular_percentual_fala(texto_conversa: str) -> dict:
     padrao_orador = r"^(?P<nome>[A-Z][a-z]+(?:\s[A-Z][a-z]+)*)(?:\s\[\d{2}:\d{2}:\d{2}\])?:\s"
     blocos = re.split(padrao_orador, texto_conversa, flags=re.MULTILINE)
@@ -135,31 +141,22 @@ def salvar_outcomes(dados: dict, stats: dict, nome_arquivo_origem: str):
         registro['participantes_detalhados'] = ", ".join([f"{p.get('nome')} ({p.get('papel')})" for p in registro['participantes']])
         del registro['participantes']
 
-    # Salva CSV
     caminho_csv = os.path.join(pasta_saida, f"{base_name}_{timestamp}.csv")
     with open(caminho_csv, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=list(registro.keys()), delimiter='|')
         writer.writeheader()
         writer.writerow(registro)
 
-    # Salva Markdown
-    caminho_md = os.path.join(pasta_saida, f"{base_name}_{timestamp}.md")
-    with open(caminho_md, 'w', encoding='utf-8') as f:
-        f.write(f"# Diagnóstico de Reunião - {dados.get('nome_cliente', 'Cliente')}\n\n")
-        for k, v in registro.items():
-            f.write(f"- **{k}**: {v}\n")
 
-# ==============================================================================
-# INTERFACE PRINCIPAL
-# ==============================================================================
-st.title("⚡ Painel Executivo de Inteligência Comercial - TOTVS (Groq)")
-st.markdown("Análise quantitativa e qualitativa de reuniões com modelos Llama 3 via Groq Cloud.")
+st.title("⚡ Painel Executivo de Inteligência Comercial - TOTVS")
+st.markdown("Plataforma avançada de auditoria de reuniões, análise comportamental e gestão de portfólio via IA.")
 
 arquivos_locais = sorted(glob.glob("transcricoes/*.txt") + glob.glob("transcricoes/*.md"))
 nomes_arquivos = [os.path.basename(f) for f in arquivos_locais]
 
 st.sidebar.markdown("---")
 opcao_fonte = st.sidebar.radio("Modo de Visão:", ["Análise Detalhada (Única)", "Dashboard do Portfólio (Global)"])
+
 
 if opcao_fonte == "Análise Detalhada (Única)":
     if nomes_arquivos:
@@ -176,14 +173,14 @@ if opcao_fonte == "Análise Detalhada (Única)":
         elif not conteudo_texto:
             st.error("Arquivo vazio.")
         else:
-            with st.spinner("Analisando transcrição com Groq (Llama 3.3)..."):
+            with st.spinner("Analisando reunião com Llama 3 via Groq..."):
                 dados = extrair_dados_conversa(conteudo_texto, client_ai, modelo_id)
                 stats = calcular_percentual_fala(conteudo_texto)
                 if dados:
                     salvar_outcomes(dados, stats, arquivo_sel)
                     st.session_state['resultado_unico'] = dados
                     st.session_state['stats_unico'] = stats
-                    st.success("Análise finalizada ultra-rápida! Resultados salvos na pasta `outcomes/`.")
+                    st.success("Análise finalizada e salva com sucesso!")
 
     if 'resultado_unico' in st.session_state:
         dados = st.session_state['resultado_unico']
@@ -192,7 +189,6 @@ if opcao_fonte == "Análise Detalhada (Única)":
         st.markdown("---")
         st.header(f"🏢 Cliente: {dados.get('nome_cliente', 'N/I')}")
 
-        # KPIs Rápidos
         k1, k2, k3, k4, k5 = st.columns(5)
         k1.metric("Classificação", dados.get('classificacao_reuniao', 'N/I'))
         k2.metric("Health Score", f"{dados.get('health_score', 0)}/100")
@@ -209,22 +205,21 @@ if opcao_fonte == "Análise Detalhada (Única)":
             st.write(f"**Produtos Atuais:** {dados.get('produtos_atuais')}")
             st.write(f"**Concorrentes Mencionados:** {dados.get('concorrentes_mencionados')}")
             st.write(f"**Oportunidade Cross-Sell:** {dados.get('oportunidade_cross_sell')}")
-
-            st.info(f"📌 **Recomendação de Próxima Ação:**\n\n{dados.get('recomendacao_acao')}")
+            st.info(f"📌 **Próxima Ação Recomendada:**\n\n{dados.get('recomendacao_acao')}")
 
         with col2:
-            st.subheader("💡 Feedback para o Vendedor (Onde Melhorar)")
+            st.subheader("💡 Feedback e Coaching para o Vendedor")
             st.write(f"👍 **Pontos Fortes:** {dados.get('pontos_fortes_vendedor')}")
             st.warning(f"🛠️ **Sugestões de Melhoria:** {dados.get('sugestoes_melhoria_vendedor')}")
 
-            st.subheader("🗣️ Tempo de Fala por Participante (% Share of Voice)")
+            st.subheader("🗣️ Share of Voice (Tempo de Fala)")
             if stats:
                 df_stats = pd.DataFrame(list(stats.items()), columns=['Participante', 'Porcentagem'])
                 st.bar_chart(df_stats.set_index('Participante'))
 
+
 else:
-    # DASHBOARD GLOBAL DO PORTFÓLIO
-    st.subheader(f"🌐 Análise de Portfólio ({len(nomes_arquivos)} Reuniões Disponíveis)")
+    st.subheader(f"🌐 Visão Executiva Consolidada ({len(nomes_arquivos)} Reuniões Disponíveis)")
 
     if st.button("🔄 Processar / Atualizar Lote Completo", type="primary"):
         if not client_ai:
@@ -250,57 +245,109 @@ else:
                 progresso.progress((idx + 1) / len(nomes_arquivos))
 
             st.session_state['resultados_lote'] = resultados_lote
-            st.success("Lote completo processado com velocidade incrível!")
+            st.success("Lote completo processado com sucesso!")
 
     if 'resultados_lote' in st.session_state:
         res_lote = st.session_state['resultados_lote']
         df_lote = pd.DataFrame(res_lote)
 
         st.markdown("---")
-        st.header("📈 Indicadores Consolidados do Portfólio")
+        st.markdown("### 🎛️ Filtros Avançados do Portfólio")
+        
+        
+        col_f1, col_f2, col_f3 = st.columns(3)
+        
+        with col_f1:
+            filtro_tipo = st.selectbox("Status da Reunião:", ["Todas", "Reuniões Boas (Sucesso)", "Reuniões Ruins (Risco/Insatisfação)"])
+        with col_f2:
+            filtro_churn = st.selectbox("Filtro de Churn:", ["Todos", "Apenas em Risco (Churn = True)", "Sem Risco (Churn = False)"])
+        with col_f3:
+            filtro_cross = st.selectbox("Oportunidade de Cross-Sell:", ["Todas", "Com Oportunidade Identificada", "Sem Oportunidade"])
 
-        # Filtro no Sidebar
-        filtro_tipo = st.sidebar.selectbox("🔍 Filtrar Reuniões:", ["Todas", "Reuniões Boas (Sucesso)", "Reuniões Ruins (Risco/Insatisfação)"])
         
         df_filtrado = df_lote.copy()
+        
         if filtro_tipo == "Reuniões Boas (Sucesso)":
             df_filtrado = df_filtrado[df_filtrado['classificacao_reuniao'].str.contains("Boa", case=False, na=False)]
         elif filtro_tipo == "Reuniões Ruins (Risco/Insatisfação)":
             df_filtrado = df_filtrado[df_filtrado['classificacao_reuniao'].str.contains("Ruim", case=False, na=False)]
-
-        # Métricas Globais
-        m1, m2, m3, m4 = st.columns(4)
-        m1.metric("Reuniões Exibidas", len(df_filtrado))
-        m2.metric("Contas em Risco de Churn", len(df_filtrado[df_filtrado['risco_churn'] == True]))
-        m3.metric("Média de Health Score", f"{round(df_filtrado['health_score'].mean(), 1)}/100" if not df_filtrado.empty else "0")
-        m4.metric("Oportunidades Cross-Sell", len(df_filtrado[df_filtrado['oportunidade_cross_sell'] != 'Nenhuma']))
+            
+        if filtro_churn == "Apenas em Risco (Churn = True)":
+            df_filtrado = df_filtrado[df_filtrado['risco_churn'] == True]
+        elif filtro_churn == "Sem Risco (Churn = False)":
+            df_filtrado = df_filtrado[df_filtrado['risco_churn'] == False]
+            
+        if filtro_cross == "Com Oportunidade Identificada":
+            df_filtrado = df_filtrado[df_filtrado['oportunidade_cross_sell'] != 'Nenhuma']
+        elif filtro_cross == "Sem Oportunidade":
+            df_filtrado = df_filtrado[df_filtrado['oportunidade_cross_sell'] == 'Nenhuma']
 
         st.markdown("---")
-        c_graf1, c_graf2 = st.columns(2)
+        
+        
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("📊 Reuniões Filtradas", len(df_filtrado))
+        m2.metric("🚨 Contas em Risco", len(df_filtrado[df_filtrado['risco_churn'] == True]))
+        m3.metric("⭐ Média Health Score", f"{round(df_filtrado['health_score'].mean(), 1)}/100" if not df_filtrado.empty else "0")
+        m4.metric("💡 Oportunidades Cross-Sell", len(df_filtrado[df_filtrado['oportunidade_cross_sell'] != 'Nenhuma']))
 
-        with c_graf1:
-            st.subheader("🎭 Distribuição do Humor da Conta")
+        st.markdown("---")
+        
+        
+        g1, g2 = st.columns(2)
+
+        with g1:
+            st.subheader("🎭 Distribuição de Humor da Conta")
             if 'humor_conta' in df_filtrado.columns and not df_filtrado.empty:
                 humor_counts = df_filtrado['humor_conta'].value_counts()
-                st.bar_chart(humor_counts)
+                
+                st.bar_chart(humor_counts, color="#ff4b4b")
+            else:
+                st.info("Sem dados suficientes para exibir o gráfico.")
 
-        with c_graf2:
+        with g2:
+            st.subheader("🎯 Oportunidades de Cross-Sell Identificadas")
+            if 'oportunidade_cross_sell' in df_filtrado.columns and not df_filtrado.empty:
+                cross_counts = df_filtrado[df_filtrado['oportunidade_cross_sell'] != 'Nenhuma']['oportunidade_cross_sell'].value_counts()
+                if not cross_counts.empty:
+                    st.bar_chart(cross_counts, color="#00C853")
+                else:
+                    st.caption("Nenhuma oportunidade de cross-sell nos filtros atuais.")
+            else:
+                st.info("Sem dados disponíveis.")
+
+        st.markdown("---")
+        
+        
+        g3, g4 = st.columns(2)
+        
+        with g3:
+            st.subheader("🚨 Proporção de Risco de Churn")
+            if 'risco_churn' in df_filtrado.columns and not df_filtrado.empty:
+                churn_counts = df_filtrado['risco_churn'].map({True: "Com Risco (True)", False: "Estável (False)"}).value_counts()
+                st.bar_chart(churn_counts, color="#FFA726")
+
+        with g4:
             st.subheader("💔 Motivos de Risco / Insatisfação")
             if 'motivo_risco_ou_insatisfacao' in df_filtrado.columns and not df_filtrado.empty:
                 motivos_df = df_filtrado[df_filtrado['motivo_risco_ou_insatisfacao'] != 'Nenhum'][['nome_cliente', 'motivo_risco_ou_insatisfacao']]
-                st.dataframe(motivos_df, use_container_width=True)
+                if not motivos_df.empty:
+                    st.dataframe(motivos_df, use_container_width=True)
+                else:
+                    st.success("Nenhum motivo de insatisfação detectado nas reuniões filtradas!")
 
         st.markdown("---")
-        st.subheader("📋 Tabela Consolidada com Exportação para CSV")
+        st.subheader("📋 Tabela Consolidada do Portfólio")
 
-        colunas_exibicao = ['arquivo', 'nome_cliente', 'classificacao_reuniao', 'health_score', 'humor_conta', 'risco_churn', 'motivo_risco_ou_insatisfacao', 'sugestoes_melhoria_vendedor']
+        colunas_exibicao = ['arquivo', 'nome_cliente', 'classificacao_reuniao', 'health_score', 'humor_conta', 'risco_churn', 'oportunidade_cross_sell', 'sugestoes_melhoria_vendedor']
         cols_existentes = [c for c in colunas_exibicao if c in df_filtrado.columns]
         
         st.dataframe(df_filtrado[cols_existentes], use_container_width=True)
 
+        
         csv_bytes = df_filtrado.to_csv(index=False, sep=";").encode('utf-8-sig')
         st.download_button(
-            label="📥 Baixar Relatório Consolidado (.CSV)",
+            label="📥 Baixar Relatório Consolidado do Portfólio (.CSV)",
             data=csv_bytes,
             file_name="relatorio_consolidado_totvs.csv",
             mime="text/csv"
