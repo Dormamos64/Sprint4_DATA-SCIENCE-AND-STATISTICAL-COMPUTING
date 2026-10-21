@@ -1,0 +1,16 @@
+Cliente: Indústria Metalúrgica Delta
+Participantes:
+Juliana (Gerente de Contas - TOTVS)
+Marcos (Diretor de Operações)
+
+Juliana [00:00:12]: Olá, Marcos, bom dia. Agendei esta reunião de acompanhamento para sabermos como tem sido a rotina com o Protheus após a última atualização.
+
+Marcos [00:00:28]: Bom dia, Juliana. Sendo bem sincero, a situação está insustentável. O módulo de chão de fábrica travou duas vezes esta semana durante o turno da manhã. Paramos a produção inteira por quase três horas.
+
+Juliana [00:01:05]: Nossa, Marcos! Três horas de parada de linha é algo extremamente grave. Eu sinto muito mesmo por este transtorno. Já vou abrir um chamado prioritário com a nossa engenharia de nível máximo.
+
+Marcos [00:01:35]: Olha, Juliana, eu gosto muito do teu atendimento, sempre foste prestativa. Mas a diretoria já deu o veredito: se isso voltar a acontecer este mês, nós vamos rescindir o contrato e migrar para o sistema da SAP que nos fez uma proposta agressiva semana passada. Já não podemos arriscar o nosso SLA com os nossos clientes finais.
+
+Juliana [00:02:15]: Entendo perfeitamente o seu posisionamento e o risco para a operação de vocês, Marcos. Vou acompanhar pessoalmente este chamado e estarei aqui todos os dias às 8h da manhã para te dar um relatório de status até estarmos 100% estabilizados. Posso contar com essa brecha para recuperarmos a confiança?
+
+Marcos [00:02:50]: Está bem, Juliana, dou-te esse voto de confiança até sexta-feira. Mas se houver mais falhas, cancelamos o contrato.

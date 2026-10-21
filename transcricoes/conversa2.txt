@@ -1,0 +1,26 @@
+Cliente: Distribuidora Beta
+Participantes:
+
+Carlos (Executivo de Vendas / CS - TOTVS)
+
+Roberto (CFO / Diretor Financeiro)
+
+Carlos [00:00:10]: Olá, Roberto. Bom dia! Vi que você pediu uma call de alinhamento urgente. Como estão as coisas na Distribuidora Beta?
+
+Roberto [00:00:25]: Bom dia, Carlos. Sendo bem franco com você, as coisas estão críticas. O nosso fluxo de aprovação travou no Fluig três vezes só nesta semana. A lentidão na integração com o Protheus está atrasando o nosso faturamento na ponta.
+
+Carlos [00:01:00]: Poxa, lamento muito ouvir isso, Roberto. Esse não é o padrão de estabilidade que entregamos. Eu já escalei isso com o nosso time de engenharia de nível 3.
+
+Roberto [00:01:20]: Carlos, preste atenção: você é um excelente parceiro. Confio no seu trabalho, você sempre tenta nos ajudar. Mas o problema não é o seu atendimento, é a ferramenta. A minha diretoria perdeu a paciência. Eles me pediram expressamente para segurar a renovação do nosso contrato no mês que vem até que isso se resolva.
+
+Carlos [00:01:45]: Roberto, entendo perfeitamente a gravidade. Congelar a renovação é um alerta vermelho para nós. Vamos resolver isso.
+
+Roberto [00:02:00]: É pior que isso, Carlos. A pedido do conselho, nós já recebemos o pessoal da Sankhya aqui ontem para entender como funciona o ERP deles. Estamos mapeando o mercado. Não dá para ficar com o caixa travado porque o faturamento não roda. Hoje pago uma fortuna de taxa de antecipação de recebíveis no banco tradicional para cobrir esses buracos de caixa que o sistema atrasa.
+
+Carlos [00:02:40]: Entendi a raiz do problema: fluxo de caixa e lentidão. Roberto, me dê 48 horas. Vou trazer o arquiteto chefe da TOTVS, sem custos, para diagnosticar e otimizar essa integração do Fluig. E sobre o seu caixa: vocês sabiam que com a TOTVS Techfin nós conseguimos embarcar a emissão de crédito e antecipação de recebíveis nativamente dentro do Protheus, com taxas geralmente bem menores que as do seu banco? Isso tiraria a carga das integrações e melhoraria o seu fluxo.
+
+Roberto [00:03:30]: TOTVS Techfin? Não me apresentaram isso. Soa interessante pagar menos taxa, mas eu não vou comprar nada novo enquanto a casa estiver desarrumada.
+
+Carlos [00:03:45]: Acordo justo. Primeiro apagamos o incêndio do Fluig e garantimos o seu faturamento rodando liso. Uma vez que você valide que estabilizou, sentamos para falar da renovação do contrato e te mostro como a Techfin pode reduzir as taxas bancárias que você paga hoje. Pode ser?
+
+Roberto [00:04:10]: Fechado. Fico no aguardo do arquiteto amanhã cedo.

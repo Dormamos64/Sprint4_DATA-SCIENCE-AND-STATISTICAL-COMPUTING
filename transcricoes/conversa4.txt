@@ -1,0 +1,17 @@
+Cliente: Rede de Supermercados Alvorada
+Participantes:
+Bruno (Executivo de Contas - TOTVS)
+Patrícia (CEO / Diretora Geral)
+
+Bruno [00:00:10]: Olá, Patrícia, tudo bem? Como estão correndo as operações nas novas filiais da rede Alvorada?
+
+Patrícia [00:00:22]: Olá, Bruno! Tudo ótimo por aqui, estamos super empolgados! O TOTVS Consinco está aguentando o volume de vendas do PDV perfeitamente, principalmente no frente de caixa do grande fluxo do fim de semana. Estamos muito satisfeitos com a estabilidade!
+
+Bruno [00:00:50]: Que excelente notícia, Patrícia! É ótimo saber que o Consinco está acompanhando o crescimento acelerado de vocês.
+Patrícia [00:01:10]: Sim, felizmente estamos abrindo mais duas lojas no mês que vem. Inclusive, exatamente por essa expansão, o nosso RH está começando a sofrer com a quantidade de processos manuais no ponto e na folha de pagamento.
+
+Bruno [00:01:45]: Entendi perfeitamente. Para essa dor exata, nós temos o TOTVS RM integrado nativamente ao nosso ecossistema. Ele automatiza a folha de pagamento e gestão de ponto eletrônico, economizando horas do RH. Podemos marcar uma demonstração prática na próxima semana?
+
+Patrícia [00:02:20]: Com certeza, Bruno! Vamos agendar sim. Se puder trazer os custos de implementação e prazos, melhor ainda. Já temos orçamento aprovado para investimentos este trimestre!
+
+Bruno [00:02:55]: Excelente! Vou agendar com o nosso especialista técnico para quinta-feira. Muito obrigado pela parceria, Patrícia!

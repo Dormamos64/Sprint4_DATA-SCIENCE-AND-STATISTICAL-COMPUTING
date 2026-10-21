@@ -1,0 +1,16 @@
+Cliente: Indústria Metalúrgica Delta
+Participantes:
+Juliana (Gerente de CS - TOTVS)
+Marcos (Diretor de Operações)
+
+Juliana [00:00:12]: Olá, Marcos, bom dia. Agendei esta reunião para saber como está a rotina no chão de fábrica após a atualização do Protheus.
+
+Marcos [00:00:28]: Bom dia, Juliana. Sendo bem sincero, a situação está insustentável! O módulo de produção travou duas vezes só esta semana durante o turno da manhã. Paramos a linha de montagem por quase três horas e perdemos matéria-prima!
+
+Juliana [00:01:05]: Nossa, Marcos, sinto muito por esse transtorno de parada de linha. Isso é realmente gravíssimo. Vou abrir agora mesmo um chamado prioritário com a engenharia N3.
+
+Marcos [00:01:35]: Juliana, o problema não é o seu atendimento, você sempre responde rápido. O problema é a estabilidade do sistema! O conselho já avisou: se isso acontecer de novo este mês, cancelamos o contrato e vamos migrar para o ERP da SAP, que já nos mandou uma proposta comercial. Não dá para perder SLA com cliente por causa de sistema travado!
+
+Juliana [00:02:15]: Entendo perfeitamente o impacto financeiro e a urgência, Marcos. Peço apenas 24 horas para que o nosso arquiteto de software faça uma varredura completa no ambiente de vocês sem custo. Posso ter esse voto de confiança para resolvermos em definitivo?
+
+Marcos [00:02:50]: Dou esse voto de confiança até amanhã às 12h. Se não resolverem, assino a migração para a SAP. Fico no aguardo do contato do técnico.

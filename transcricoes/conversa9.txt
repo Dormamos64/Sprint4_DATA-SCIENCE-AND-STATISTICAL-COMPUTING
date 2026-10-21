@@ -1,0 +1,18 @@
+Cliente: HealthTech Vida Saudável
+Participantes:
+Mariana (Customer Success - TOTVS)
+Gabriel (CTO / Diretor de Tecnologia)
+
+Mariana [00:00:10]: Oi, Gabriel! Tudo bem? Como foi a migração dos fluxos de atendimento para o TOTVS Fluig?
+
+Gabriel [00:00:20]: Oi, Mariana! Tudo maravilhoso! O Fluig mudou o nosso jogo por aqui. Conseguimos automatizar todo o onboarding dos novos médicos e o tempo de aprovação de cadastros caiu de 5 dias para 2 horas! A equipe está adorando a plataforma.
+
+Mariana [00:00:45]: Que resultado fantástico, Gabriel! Ficamos muito felizes em ver esse impacto na ponta.
+
+Gabriel [00:01:00]: Pois é! Agora que os processos internos estão redondos, a nossa próxima dor é a gestão de prontuários e faturamento TISS com os planos de saúde. Hoje usamos um sistema legado bem antigo que vive dando erro de digitação.
+
+Mariana [00:01:25]: Entendi! Para a área de saúde, nós temos o TOTVS Gestão Hospitalar e Clínica, que conecta a recepção, o faturamento TISS e o prontuário eletrônico direto ao financeiro do Fluig.
+
+Gabriel [00:01:48]: Poxa, que bacana! Se for tão intuitivo quanto o Fluig, com certeza queremos conhecer. Pode agendar uma conversa com o time especializado para a semana que vem?
+
+Mariana [00:02:05]: Combinado! Vou mandar o convite para a próxima terça-feira às 14h. Muito obrigada pelo feedback positivo, Gabriel!

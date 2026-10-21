@@ -1,0 +1,20 @@
+Cliente: Grupo Educacional Saber
+Participantes:
+Camila (Especialista em CS - TOTVS)
+Fernando (Diretor Financeiro)
+
+Camila [00:00:15]: Olá, Fernando! Como vão os preparativos para o início do próximo período letivo?
+
+Fernando [00:00:25]: Olá, Camila. Tudo dentro do planejado. O TOTVS RM para a gestão de alunos e folha dos professores está rodando sem grandes problemas no dia a dia.
+
+Camila [00:00:45]: Que ótimo! E como está a gestão de contratos de estágio e assinaturas digitais da instituição?
+
+Fernando [00:00:58]: Hoje fazemos tudo em papel e colhemos assinaturas físicas dos alunos e responsáveis. É um processo lento e que consome bastante espaço no arquivo morto, mas vai funcionando.
+
+Camila [00:01:20]: Vocês sabiam que integrando o TOTVS Fluig ao RM vocês podem digitalizar 100% dessas assinaturas com validade jurídica, economizando papel e tempo de atendimento na secretaria?
+
+Fernando [00:01:40]: Parece útil, mas qual é o custo disso? O nosso orçamento para este ano está extremamente enxuto e não pretendemos aumentar os custos com TI. Se envolver licenciamento caro, não temos interesse no momento.
+
+Camila [00:02:05]: Entendo a restrição orçamentária, Fernando. Nós temos um pacote educacional reduzido do Fluig por volume de assinaturas. Posso mandar uma simulação comparando o que vocês gastam hoje com papel e impressão versus a licença digital. Se não houver economia real, não avançamos.
+
+Fernando [00:02:30]: Pode mandar a simulação por e-mail, então. Se os números mostrarem redução de custo operacional, eu avalio com a diretoria.

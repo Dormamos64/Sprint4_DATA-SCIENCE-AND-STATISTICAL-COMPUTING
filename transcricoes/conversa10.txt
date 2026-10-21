@@ -1,0 +1,18 @@
+Cliente: Vestuário Estilo & Moda
+Participantes:
+Ricardo (Executivo Comercial - TOTVS)
+Vanessa (Diretora Comercial)
+
+Ricardo [00:00:10]: Olá, Vanessa, bom dia! Como foram as vendas da coleção de inverno?
+
+Vanessa [00:00:20]: Bom dia, Ricardo. Olha, as vendas foram razoáveis, mas a nossa margem de lucro está despencando por causa do excesso de estoque parado nas lojas. O Protheus faz o controle de saldo de estoque, mas não nos dá inteligência para saber o que remarcar ou transferir de loja antes que a estação acabe.
+
+Ricardo [00:00:48]: Entendo a frustração com a margem, Vanessa. Essa previsibilidade de demanda é justamente o forte do TOTVS Carol IA focado em Varejo Moda. Ela analisa o histórico de vendas de cada loja e sugere a redistribuição automática das peças.
+
+Vanessa [00:01:15]: Ricardo, vou te parar por aí. Eu sei que a ferramenta da Carol IA é boa, mas os custos de implantação que me passaram no ano passado eram irreais para o nosso tamanho. Não vou investir uma fortuna em módulos adicionais se o custo do Protheus que pago mensalmente já é alto. O pessoal da Linx nos ofereceu algo similar embutido no pacote deles sem custo extra de setup.
+
+Ricardo [00:01:50]: Entendo perfeitamente a sua preocupação com o investimento, Vanessa. Muita coisa mudou do ano passado para cá, e agora temos o modelo SaaS por assinatura mensal sem a necessidade de um projeto longo de consultoria.
+
+Vanessa [00:02:18]: Se for uma assinatura mensal acessível sem taxa de adesão exorbitante, eu aceito ver a proposta. Mas já aviso: se o valor total estourar nosso orçamento atual em 10%, encerramos a conversa e vou analisar a proposta da Linx.
+
+Ricardo [00:02:40]: Transparência total, Vanessa. Vou preparar uma cotação enxuta sob medida para o tamanho da sua rede e te envio até sexta-feira.

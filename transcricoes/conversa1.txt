@@ -1,0 +1,30 @@
+Cliente: Logística Alfa
+Participantes: - Carlos (Executivo de Vendas / CS - TOTVS)
+
+Mariana (Gerente de Operações e TI)
+
+Carlos [00:00:15]: Bom dia, Mariana! Tudo bem? Obrigado por reservar esse tempo na agenda. A ideia hoje é fazer um check-in de como estão as coisas com o Protheus na operação de vocês e entender os próximos passos do semestre.
+
+Mariana [00:00:32]: Bom dia, Carlos. Tudo bem por aqui. Olha, o Protheus está rodando super bem na parte do backoffice financeiro e faturamento. A diretoria está bem satisfeita com a visibilidade dos dados e não temos tido problemas de lentidão.
+
+Carlos [00:01:05]: Que excelente notícia! Fico muito feliz. E nas outras áreas? Lembro que no nosso último papo, você mencionou que o RH estava com gargalos.
+
+Mariana [00:01:18]: Pois é, aí que está o problema. O RH tá sofrendo demais. O pessoal ainda tá fechando muita coisa de folha de pagamento na mão, cruzando planilha de horas... tá gerando muito retrabalho e até alguns erros de cálculo que deram dor de cabeça com o sindicato mês passado.
+
+Carlos [00:02:00]: Entendi. Isso realmente gera um risco trabalhista alto. A gente já chegou a conversar por cima sobre levar o TOTVS RM para o RH de vocês, né?
+
+Mariana [00:02:15]: Sim, a gente comentou. Sendo bem transparente com você, Carlos... a minha diretora de RH viu uma demonstração do sistema da Senior semana passada num evento. Ela gostou bastante e tá pressionando internamente para a gente fazer uma PoC com eles.
+
+Carlos [00:02:40]: Compreendo. A Senior tem boas ferramentas, mas pensa na arquitetura de vocês hoje. Se vocês trouxerem outro player, vão criar mais um silo de dados. O TOTVS RM já tem integração nativa com o Protheus que vocês rodam hoje. A gente elimina essa dor de cabeça de integração e centraliza o suporte.
+
+Mariana [00:03:05]: É, como pessoa de TI, eu prefiro mil vezes consolidar tudo na TOTVS se o RM for realmente tão integrado assim. A manutenção fica mais fácil para o meu time. Eu confio no seu atendimento, Carlos, você sempre nos ajudou rápido. Mas o meu medo é o tempo de implantação. A nossa virada do Protheus há dois anos foi bem traumática, atrasou uns 3 meses. Como seria isso agora?
+
+Carlos [00:03:45]: Muito diferente. O RM já evoluiu muito no modelo de deploy e a gente consegue fazer uma implantação em fases, focando primeiro na folha, que é a dor latente de vocês.
+
+Mariana [00:04:10]: Legal. Mas tem outro ponto. Por favor, não mencione esse valor de R$ 50 mil que conversamos na última troca de e-mails para o meu CFO ainda. Ele está obcecado com o ROI do semestre e cortou novos investimentos. Eu preciso montar um caso de negócios interno provando o quanto o RH tá perdendo de dinheiro com horas extras antes de levar a proposta oficial da TOTVS para ele.
+
+Carlos [00:04:45]: Combinado, Mariana. Segredo nosso por enquanto. O que eu posso fazer é te mandar um material focado exatamente em ROI de automação de folha, para te ajudar a montar essa defesa interna. Te ajuda?
+
+Mariana [00:05:05]: Ajuda muito. Me manda isso. Se os números fizerem sentido, eu barro a conversa com a Senior e a gente foca no RM.
+
+Cenário 2: Gestão de Crise, Risco de Churn e TOTVS Techfin

@@ -1,0 +1,18 @@
+Cliente: TransLogística Express
+Participantes:
+Diego (Consultor Comercial - TOTVS)
+Renata (Gerente de Logística)
+
+Diego [00:00:05]: Olá, Renata! Obrigado por aceitar nosso convite. Queríamos entender como está a gestão de fretes e rastreamento com o Logix.
+
+Renata [00:00:18]: Bom dia, Diego. Olha, o Logix faz o básico do fiscal e faturamento, mas a parte de roteirização e gestão de frotas deixa muito a desejar. É tudo muito engessado.
+
+Diego [00:00:40]: Entendo, Renata. Na verdade, nós lançamos recentemente uma nova camada de inteligência com o TOTVS Carol IA que se conecta ao Logix para otimização de rotas em tempo real.
+
+Renata [00:01:02]: Sinceramente, Diego? Eu fico com o pé atrás. Todo vendedor de software promete inteligência artificial hoje em dia, mas na hora de rodar no pátio com os motoristas, não funciona e gera mais retrabalho. Já gastamos muito dinheiro com promessas parecidas do pessoal da Senior Sistemas no passado.
+
+Diego [00:01:30]: Entendo perfeitamente a sua desconfiança, Renata, e você tem toda razão em exigir provas reais. Em vez de te vender algo, que tal fazermos um teste piloto gratuito em duas rotas específicas por 14 dias para você medir a redução de custos de combustível na prática?
+
+Renata [00:02:00]: Um teste piloto sem custo e sem compromisso de contrato? Se for assim, eu aceito testar. Mas se der erro na emissão de CTe, interrompemos imediatamente.
+
+Diego [00:02:20]: Fechado! Vou enviar o termo do teste piloto até o fim do dia para sua validação.
