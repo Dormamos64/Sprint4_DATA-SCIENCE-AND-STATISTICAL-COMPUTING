@@ -225,7 +225,7 @@ Tecnologias Utilizadas
 
 - Manipulação de Dados: Pandas
 
-- Provedor de LLM: Groq Cloud API (Llama 3 / GPT-OSS Models) / Google Gemini API
+- Provedor de LLM: Groq Cloud API (Llama 3 / GPT-OSS Models) 
 
 - Gerenciamento de Ambientes: python-dotenv
 
@@ -233,8 +233,14 @@ Tecnologias Utilizadas
 https://sprint4data-science-and-statistical-computing-o6eabr243shhl7u8.streamlit.app
 
 
-===============================================================================
+================================================================
+Time
+- Felipe Yamaguchi Mesquita	556170
+- Gabriel Oliveira Amaral	563872
+- Rafael Tavares Santos	563487
+- Guilherme Rodrigues de Andrade 565863
+- Gusthavo Costa de Melo 561330
 
 Desenvolvido para o Challenge FIAP - Sprint 4
 
-================================----------------===============================
+================================----------------=========
